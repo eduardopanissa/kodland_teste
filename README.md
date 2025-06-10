@@ -58,6 +58,34 @@ Este jogo foi desenvolvido no estilo **[escolha entre: Roguelike / Rogue / Platf
 │   │   └── images/       # Sprites e fundos do jogo
 ├── README.md             # Este arquivo
 ```
+## 🔒 Regras Atendidas
+
+✅ Apenas bibliotecas permitidas foram utilizadas  
+✅ Código 100% original, feito do zero  
+✅ Sem copiar partes de projetos externos  
+✅ Divisão lógica e clara do código (aprox. 100–200 linhas úteis)  
+✅ Projeto funcional e sem bugs perceptíveis  
+
+---
+
+## 📎 Recursos úteis
+
+- [Documentação oficial do PGZero](https://pygame-zero.readthedocs.io/en/stable/)
+- [Guia de boas práticas PEP8](https://peps.python.org/pep-0008/)
+- [Sprites e sons gratuitos](https://opengameart.org/)
+
+---
+
+## 🧾 Observações finais
+
+> Este projeto foi feito com dedicação, respeitando todas as diretrizes propostas.  
+> Espero que demonstre minha capacidade técnica, responsabilidade e ética profissional.
+
+---
+
+## ✅ Licença
+
+Este projeto é de uso pessoal e educacional. Todos os assets (sons e imagens) utilizados são de uso livre ou criados exclusivamente para este projeto.
 
 ---
 
@@ -98,32 +126,3 @@ pgzrun mygame.py
 > Certifique-se de estar na mesma pasta onde está localizado o `mygame.py`.
 
 ---
-
-## 🔒 Regras Atendidas
-
-✅ Apenas bibliotecas permitidas foram utilizadas  
-✅ Código 100% original, feito do zero  
-✅ Sem copiar partes de projetos externos  
-✅ Divisão lógica e clara do código (aprox. 100–200 linhas úteis)  
-✅ Projeto funcional e sem bugs perceptíveis  
-
----
-
-## 📎 Recursos úteis
-
-- [Documentação oficial do PGZero](https://pygame-zero.readthedocs.io/en/stable/)
-- [Guia de boas práticas PEP8](https://peps.python.org/pep-0008/)
-- [Sprites e sons gratuitos](https://opengameart.org/)
-
----
-
-## 🧾 Observações finais
-
-> Este projeto foi feito com dedicação, respeitando todas as diretrizes propostas.  
-> Espero que demonstre minha capacidade técnica, responsabilidade e ética profissional.
-
----
-
-## ✅ Licença
-
-Este projeto é de uso pessoal e educacional. Todos os assets (sons e imagens) utilizados são de uso livre ou criados exclusivamente para este projeto.
