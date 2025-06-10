@@ -15,6 +15,7 @@ X_MAX = WIDTH - 20
 
 #variavel
 playlist = ['life_in_the_world','the_woodwind_song','life_in_the_world','the_woodwind_song']
+coin_up = 0
 score = 0
 life = 5
 start = False
@@ -43,8 +44,9 @@ bomb = Actor('bomb2')
 bomb.pos = (random.randint(X_MIN, X_MAX), 0)
 
 def reset_game():
-    global score, life, end_points, game_over, start, playlist
+    global coin_up, score, life, end_points, game_over, start, playlist
     
+    coin_up = 0
     score = 0
     life = 5
     end_points = 0
@@ -59,8 +61,8 @@ def reset_game():
     if sound_on:
         music.play_once(playlist[0])
         music.queue(playlist[1]) 
-        music.queue(playlist[2]) 
-        music.queue(playlist[3]) 
+        #music.queue(playlist[2]) 
+        #music.queue(playlist[3]) 
 
 #funcao de movimento e inverção do barco
 def move_ship():
@@ -80,7 +82,7 @@ def move_ship():
         ship.x = RIGHT_LIMIT
 
 def reset_object(): 
-    global score, life, game_over, end_points, sound_on, start
+    global coin_up, score, life, game_over, end_points, sound_on, start
     #reiniciando os objetos
     coin.y += 3 
     if coin.y > HEIGHT:
@@ -92,14 +94,14 @@ def reset_object():
         
 
         coin.pos = (random.randint(X_MIN, X_MAX), 0)
+        coin_up += 1
         score += 1
-        end_points += 1 
-        
-        if score == 10:
+                
+        if coin_up == 10:
             if sound_on:
                 sounds.life_up.play()
             
-            score = 0
+            coin_up = 0
             life += 1
         
     skull.y += 2
@@ -131,8 +133,8 @@ def reset_object():
         
         bomb.pos = (random.randint(X_MIN, X_MAX), 0)
            
-        if score > 0:
-            score -= 1
+        if coin_up > 0:
+            coin_up -= 1
         
         elif life > 0:
             
@@ -140,9 +142,9 @@ def reset_object():
                 sounds.life_down.play()
            
             life -= 1
-            score = 9
+            coin_up = 9
         
-        if life == 0 and score == 0:
+        if life == 0 and coin_up == 0:
             game_over = True
              
 def draw():
@@ -150,16 +152,16 @@ def draw():
     draw_menu()
     if game_over == True:
         screen.draw.text('GAME OVER', center = (WIDTH // 2, HEIGHT // 2 - 30), color = (255,255,255), fontsize = 30)
-        screen.draw.text('FINAL SCORE: ' + str(end_points), center=(WIDTH // 2, HEIGHT // 2 + 20), color = (255,255,255), fontsize = 30)
+        screen.draw.text('FINAL SCORE: ' + str(score), center=(WIDTH // 2, HEIGHT // 2 + 20), color = (255,255,255), fontsize = 30)
     
     elif start == True:
-        screen.draw.text('Score: ' + str(score), (10, 50), color = (255,255,255), fontsize = 30)
-        screen.draw.text('Life: ' + str(life), (730, 50), color = (255,255,255), fontsize = 30)
         ship.draw()
         coin.draw()
         skull.draw()
         bomb.draw()
-    
+        screen.draw.text('Coin: ' + str(coin_up), (10, 50), color=(255,255,255), fontsize = 30)
+        screen.draw.text('Score: ' + str(score), center=(WIDTH // 2, 60), color=(255,255,255), fontsize = 30)
+        screen.draw.text('Life: ' + str(life), (730, 50), color=(255,255,255), fontsize = 30)
        
         
 # Definindo os botões do menu
@@ -204,7 +206,7 @@ def handle_menu_action(label):
             music.set_volume(0)
             
     elif label == "SAIR":
-        exit()  # Fecha o jogo
+        exit()  #Fecha o jogo
 
     
 def update():
