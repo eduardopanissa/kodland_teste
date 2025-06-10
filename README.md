@@ -61,6 +61,44 @@ Este jogo foi desenvolvido no estilo **[escolha entre: Roguelike / Rogue / Platf
 
 ---
 
+## 🚀 Como Executar o Projeto
+
+### 1. Criar um ambiente virtual (recomendado)
+
+```bash
+python -m venv venv
+```
+
+### 2. Ativar o ambiente virtual
+
+- **Windows:**
+```bash
+venv\Scripts\activate
+```
+
+- **Linux/macOS:**
+```bash
+source venv/bin/activate
+```
+
+### 3. Instalar a biblioteca necessária
+
+```bash
+pip install pgzero
+```
+
+### 4. Executar o jogo
+
+No terminal, digite:
+
+```bash
+pgzrun mygame.py
+```
+
+> Certifique-se de estar na mesma pasta onde está localizado o `mygame.py`.
+
+---
+
 ## 🔒 Regras Atendidas
 
 ✅ Apenas bibliotecas permitidas foram utilizadas  
@@ -68,18 +106,6 @@ Este jogo foi desenvolvido no estilo **[escolha entre: Roguelike / Rogue / Platf
 ✅ Sem copiar partes de projetos externos  
 ✅ Divisão lógica e clara do código (aprox. 100–200 linhas úteis)  
 ✅ Projeto funcional e sem bugs perceptíveis  
-
----
-
-## 🚀 Como Executar o Projeto
-
-1. Certifique-se de ter o **Python** e o **PgZero** instalados.
-2. Navegue até o diretório do projeto.
-3. Execute o jogo com:
-
-```bash
-pgzrun main.py
-```
 
 ---
 
